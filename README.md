@@ -52,7 +52,7 @@ X = df[features]
 
 X = X.fillna(X.median())
 
-* # Train Isolation Forest model
+* Train Isolation Forest model
 
 model = IsolationForest(n_estimators=100, contamination=0.05, random_state=42)
 df["anomaly"] = model.fit_predict(X)  # -1 indicates anomaly, 1 is normal
@@ -79,7 +79,7 @@ fig.show()
 
 * params = {"n_estimators": [50, 100, 200], "max_depth": [None, 10, 20], "min_samples_split": [2, 5, 10]}
 
-# Run search grid
+* Run search grid
 
 grid_search = GridSearchCV(RandomForestClassifier(random_state=42), params, cv=5)
 grid_search.fit(X_train, y_train)
