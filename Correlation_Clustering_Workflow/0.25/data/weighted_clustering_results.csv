@@ -1,0 +1,52 @@
+State,KMeans Cluster,Hierarchical Cluster,Cosine Cluster
+,,,
+Alabama,6,5,4
+Alaska,1,4,3
+Arizona,6,5,1
+Arkansas,3,6,0
+California,0,1,0
+Colorado,6,7,7
+Connecticut,9,8,0
+Delaware,3,6,0
+District of Columbia,8,2,2
+Florida,2,0,1
+Georgia,2,0,1
+Hawaii,8,2,2
+Idaho,2,5,1
+Illinois,3,6,0
+Indiana,2,0,1
+Iowa,5,9,3
+Kansas,3,6,8
+Kentucky,1,4,1
+Louisiana,8,3,3
+Maine,6,5,4
+Maryland,0,1,0
+Massachusetts,4,2,2
+Michigan,4,2,2
+Minnesota,7,0,1
+Mississippi,1,4,3
+Missouri,6,5,1
+Montana,2,5,1
+Nebraska,4,2,4
+Nevada,2,0,1
+New Hampshire,6,1,0
+New Jersey,3,7,0
+New Mexico,0,1,0
+New York,5,3,3
+North Carolina,1,4,3
+Ohio,8,7,6
+Oklahoma,5,9,3
+Oregon,7,0,1
+Pennsylvania,0,1,0
+Rhode Island,8,2,2
+South Carolina,0,1,0
+South Dakota,8,2,2
+Tennessee,3,6,0
+Texas,2,0,1
+Utah,3,6,0
+Vermont,2,0,1
+Virginia,6,5,5
+Washington,6,7,9
+West Virginia,5,9,3
+Wisconsin,2,0,1
+Wyoming,1,4,3
