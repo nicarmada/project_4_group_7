@@ -124,14 +124,6 @@ model = IsolationForest(n_estimators=100, contamination=0.05, random_state=42) d
 - interactive scatter plot with plotly 
 
 
-
-
-
-
-
-
-
-
 # Overview of cmagor_code.ipynb:
 * Part 1:
  *  In this section we start by importing all necessary dependencies, reading in the file path of the "cleaned_mortality_data.csv", and transforming into a DataFrame
@@ -158,6 +150,73 @@ cleaned_df
 
 * Part 7:
 * In this final section, we apply StandardScaler and RandomForestRegressor using crude_rate as the target, we get an accuracy score, and generate a scatter plot based off that RandomForestRegressor using crude_rate as the target.
+
+# Overview of Nicholas Armada's Correlation Clustering Analysis
+
+## Opioid Mortality Clustering Analysis
+
+## Overview  
+This project applies **correlation analysis** and **clustering techniques** to examine opioid-related mortality trends across U.S. states. We identify structurally similar states based on how opioid-related metrics evolve over time.
+
+---
+
+## Key Findings
+
+### **Clustering Results: Correlation Threshold = 0.3**
+States were grouped based on **year-over-year correlation trends** using K-Means clustering.
+
+#### **Cluster 0: Prescription-Driven Trends**
+* **Prescriptions** scale with **population growth** *(0.53 to 0.87)*.
+
+#### **Cluster 1: Prescription-Linked Mortality Risk**
+* **Opioid deaths** track **prescriptions** *(0.32 to 0.60)*.  
+Deaths scale with **population** *(0.31 to 0.39)*.  
+* **Prescriptions** follow **population trends** *(0.32 to 0.71)*.
+
+#### **Cluster 2: Structural Vulnerabilities & Policy Impacts**
+* **Deaths** scale with **population** *(0.35 to 0.73)*.  
+* **Prescriptions** mirror **healthcare demand** *(0.54 to 0.78)*.  
+Mortality and **prescriptions align**, suggesting both **medical & illicit opioid** contributions.
+
+#### **Cluster 3: Regulatory & Economic Influences**
+* **Prescriptions decline** as **population grows** *(-0.37 to -0.56)*.  
+* **Opioid mortality rises** with **population shifts** *(~0.44)*.
+
+#### **Cluster 4: External Drivers of Opioid Mortality**
+* **Deaths decline** with **both prescriptions & population** *(-0.30 to -0.59)*.  
+* **Prescriptions** track **population growth** *(0.33 to 0.63)*.
+
+---
+
+### **🔎 Clustering Results: Correlation Threshold = 0.25**
+Lowering the threshold from **±0.3 → ±0.25** introduces **3 more states** but reduces the number of clusters from **5 → 4**.
+
+#### **Cluster 0: Prescription-Driven Trends**
+* **Prescriptions** track **population growth** *(up to 0.87)*.  
+* **Opioid deaths** move **inversely** to prescriptions *(-0.55 to -0.59)*, suggesting illicit opioid use.
+
+#### **Cluster 1: Structural Vulnerabilities**
+* **Deaths** rise with **population** *(0.26 to 0.73)*.  
+* Higher **prescriptions correlate** with **more deaths** *(0.29 to 0.56)*.
+
+#### **Cluster 2: Moderate Prescription Alignment**
+* **Deaths** follow **prescription trends** *(0.28 to 0.60)*.  
+* **Population growth** shows **mixed effects on mortality** *(-0.28 to 0.46)*.
+
+#### **Cluster 3: Regulatory & Economic Influences**
+* **Prescriptions decline** as **population grows** *(-0.37 to -0.56)*.  
+* **Opioid deaths correlate** with **population shifts** *(0.26 to 0.44)*.
+
+---
+
+## Conclusion
+This study highlights **key structural patterns** in opioid-related trends across states.  
+The clustering models reveal how **prescription behaviors, regulatory policies, and illicit opioid access** drive distinct mortality patterns.
+
+ **All Jupyter Notebooks & Data Files** are in this repository for further exploration.  Please see the folder "Correlation_Clustering_Workflow" for all items necessary to carry out this workflow.
+
+---
+
 
 # We got/referenced the following lines of code from Xpert Learning Assistant/ChatGPT:
 
@@ -217,3 +276,4 @@ for state, group in cleaned_df.groupby("state"):
     features = group[["deaths", "population", "crude_rate", "prescriptions_dispensed_by_us_retailers_in_that_year_(millions)"]]
 
 * sns.lineplot(data=state_clustered_df.groupby(["year", "cluster"])["crude_rate"].mean().reset_index(), x="year", y="crude_rate", hue="cluster", palette="tab10", marker="o")
+
