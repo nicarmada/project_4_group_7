@@ -188,7 +188,7 @@ Mortality and **prescriptions align**, suggesting both **medical & illicit opioi
 
 ---
 
-### **🔎 Clustering Results: Correlation Threshold = 0.25**
+### ** Clustering Results: Correlation Threshold = 0.25**
 Lowering the threshold from **±0.3 → ±0.25** introduces **3 more states** but reduces the number of clusters from **5 → 4**.
 
 #### **Cluster 0: Prescription-Driven Trends**
