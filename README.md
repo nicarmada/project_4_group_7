@@ -1,8 +1,33 @@
 # project_4_group_7
 Data Project 4 - Group 7
 
+# Overview of michele aguilar code
+Anomaly detection in mortality data
 
+Using the data chosen I decided to look further into anomalies in the dataset to see if there was a correlation in years and crude rate. I wanted to identify if our dataset could discover trends or unusual spikes regarding death rate in correlation to pandemics, environmental factors, or other unexpected events.
 
+Feature Selection: Focus on crude_rate, deaths, and prescriptions_dispensed_by_us_retailers_in_that_year_(millions).
+Machine Learning: Isolation Forest
+Normal points get a label 1 (blue in chart).
+Anomalies get a label -1 (red in chart).
+
+Code steps:
+- imported necessary dependencies
+- Imported csv file
+- Select relevant features for anomaly detection
+
+features = ["crude_rate", "deaths", "prescriptions_dispensed_by_us_retailers_in_that_year_(millions)"] 
+X = df[features]
+- Handle missing values by filling with median values
+
+X = X.fillna(X.median())
+
+- Train Isolation Forest model. -1 indicates anomaly, 1 is normal
+
+model = IsolationForest(n_estimators=100, contamination=0.05, random_state=42) df["anomaly"] = model.fit_predict(X) 
+
+- Visualize anomalies in crude rate by using matplotlib
+- interactive scatter plot with plotly 
 
 
 
